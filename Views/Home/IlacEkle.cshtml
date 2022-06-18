@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "IlacEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using IlacSitesi.Models
+@model Ilac
+<br />
+<br />
+<br />
+<br />
+<div class="col-md-12 ">
+    @using (Html.BeginForm("IlacEkle", "Home", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.Label("İlaç Adı")
+            @Html.TextBoxFor(x => x.IlacAdi, new { @class = "form-control col-md-2" })
+            @Html.ValidationMessageFor(x => x.IlacAdi)
+            <br /><br />
+            @Html.Label("İlaç Açıklama")
+            @Html.TextAreaFor(x => x.Description, new { @class = "form-control col-md-2" })
+            @Html.ValidationMessageFor(x => x.Description)
+            <br /><br />
+            @Html.Label("İlaç Fiyat")
+            @Html.TextBoxFor(x => x.Price, new { @class = "form-control col-md-2" })
+            @Html.ValidationMessageFor(x => x.Price)
+            <br /><br />
+            @Html.Label("İlaç Stok Adedi")
+            @Html.TextBoxFor(x => x.StokAdedi, new { @class = "form-control col-md-2" })
+            @Html.ValidationMessageFor(x => x.StokAdedi)
+            <br /><br />
+            <button class="btn btn-info">İlaç Ekle</button>
+        </div>
+    }
+</div>
+<br />
+<br />
+<br />
+<br />
+

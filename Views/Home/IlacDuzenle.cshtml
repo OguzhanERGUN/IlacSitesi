@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "I";
+}
+
+@using IlacSitesi.Models
+@model Ilac
+
+
+
+<br />
+<br />
+<br />
+<br />
+<div class="col-md-12 ">
+    @using (Html.BeginForm("IlacDuzenle", "Home", FormMethod.Post))
+    {
+
+        @Html.Label("İlaç ID", new { @class = "form-label" })
+        @Html.TextBoxFor(x => x.IlacID, new { @class = "form-control col-md-2" })
+        <br />
+        @Html.Label("İlaç Adı")
+        @Html.TextBoxFor(x => x.IlacAdi, new { @class = "form-control col-md-2 " })
+        @Html.ValidationMessageFor(x => x.IlacAdi)
+        <br />
+        @Html.Label("İlaç Açıklaması")
+        @Html.TextAreaFor(x => x.Description, new { @class = "form-control col-md-2 " })
+        @Html.ValidationMessageFor(x => x.Description)
+        <br />
+        @Html.Label("İlaç Fiyat")
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control col-md-2" })
+        @Html.ValidationMessageFor(x => x.Price)
+        <br />
+        @Html.Label("İlaç Stok Adedi")
+        @Html.TextBoxFor(x => x.StokAdedi, new { @class = "form-control col-md-2" })
+        @Html.ValidationMessageFor(x => x.StokAdedi)
+        <br />
+        <button class="btn btn-info">Değişikleri Kaydet</button>
+
+    }
+</div>
+
+
+
+

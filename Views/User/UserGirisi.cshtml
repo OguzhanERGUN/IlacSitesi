@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "UserGirisi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<IlacSitesi.Models.Ilac>
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 text-center">
+                <h3 class="section-heading text-uppercase">İlaç İsmini Giriniz</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10">
+                @*<form id="contactForm" name="sentMessage" novalidate="novalidate">*@
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "btn-btn primary" }))
+                            {
+                                @Html.TextBox("searching")<button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase " type="submit">İlacı Sorgula</button>
+                                <div style="height: 300px; overflow: auto;">
+                                    <!-- Your Table Here -->
+
+                                    <table class="table table-primary table table-hover" style="background-color: white">
+                                        <thead>
+                                            <tr>
+                                                <th>İlaç ID</th>
+                                                <th>İlaç Adı</th>
+                                                <th>İlaç Fiyat</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (Model.Count() == 0)
+                                            {
+                                                <tr>
+                                                    <td colspan="3" style="color:red">
+                                                        No Match Any Document
+                                                    </td>
+                                                </tr>
+
+                                            }
+                                            else
+                                            {
+
+                                                foreach (var item in Model)
+                                                {
+                                                    <tr>
+                                                        <td>@item.IlacID</td>
+                                                        <td>@item.IlacAdi</td>
+                                                        <td>@item.Price</td>
+                                                        <td>@Html.ActionLink("İncele", "UserDetayGoruntule", "User", new { id = item.IlacID }, new { @class = "btn btn-warning btn-xs text-uppercase" })</td>
+
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            }
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-lg-2 text-center">
+                        <div id="success"></div>
+                    </div>
+                </div>
+                @*</form>*@
+            </div>
+        </div>
+    </div>
+</section>
