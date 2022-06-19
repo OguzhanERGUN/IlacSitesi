@@ -169,6 +169,9 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Ilac.cs" />
+    <Compile Include="Models\Indications.cs" />
+    <Compile Include="Models\MonoklonalAntikors.cs" />
+    <Compile Include="Models\Producer.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
