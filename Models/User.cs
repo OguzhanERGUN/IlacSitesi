@@ -8,6 +8,7 @@ namespace IlacSitesi.Models
 {
     public class User
     {
+        //This Class made for Members İnformations
         [Key]
         public int UserID { get; set; }
         public string UserMail { get; set; }

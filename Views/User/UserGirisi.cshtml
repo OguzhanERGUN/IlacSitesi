@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "btn-btn primary" }))
+                            @using (Html.BeginForm("UserGirisi", "User", FormMethod.Get, new { @class = "btn-btn primary" }))
                             {
                                 @Html.TextBox("searching")<button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase " type="submit">İlacı Sorgula</button>
                                 <div style="height: 300px; overflow: auto;">

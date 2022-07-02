@@ -167,6 +167,10 @@
     <Compile Include="Migrations\202206180805275_migration_user_add.designer.cs">
       <DependentUpon>202206180805275_migration_user_add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206221531231_mig_new_models.cs" />
+    <Compile Include="Migrations\202206221531231_mig_new_models.designer.cs">
+      <DependentUpon>202206221531231_mig_new_models.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Ilac.cs" />
     <Compile Include="Models\Indications.cs" />
@@ -223,6 +227,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202206180805275_migration_user_add.resx">
       <DependentUpon>202206180805275_migration_user_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206221531231_mig_new_models.resx">
+      <DependentUpon>202206221531231_mig_new_models.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
