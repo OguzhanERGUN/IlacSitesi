@@ -5,7 +5,7 @@
 }
 
 @using IlacSitesi.Models
-@model Ilac
+@model MonoklonalAntikors
 <br />
 <br />
 <br />
@@ -13,25 +13,29 @@
 <div class="col-md-12 ">
     @using (Html.BeginForm("IlacEkle", "Home", FormMethod.Post))
     {
-        <div class="form-group">
-            @Html.Label("İlaç Adı")
-            @Html.TextBoxFor(x => x.IlacAdi, new { @class = "form-control col-md-2" })
-            @Html.ValidationMessageFor(x => x.IlacAdi)
-            <br /><br />
-            @Html.Label("İlaç Açıklama")
-            @Html.TextAreaFor(x => x.Description, new { @class = "form-control col-md-2" })
-            @Html.ValidationMessageFor(x => x.Description)
-            <br /><br />
-            @Html.Label("İlaç Fiyat")
-            @Html.TextBoxFor(x => x.Price, new { @class = "form-control col-md-2" })
-            @Html.ValidationMessageFor(x => x.Price)
-            <br /><br />
-            @Html.Label("İlaç Stok Adedi")
-            @Html.TextBoxFor(x => x.StokAdedi, new { @class = "form-control col-md-2" })
-            @Html.ValidationMessageFor(x => x.StokAdedi)
-            <br /><br />
-            <button class="btn btn-info">İlaç Ekle</button>
-        </div>
+    <div class="form-group">
+        @Html.Label("ICD-10 Code")
+        @Html.TextBoxFor(x => x.icd10_code, new { @class = "form-control col-md-2" })
+        @Html.ValidationMessageFor(x => x.icd10_code)
+        <br /><br />
+        @Html.Label("Dose")
+        @Html.TextBoxFor(x => x.dose, new { @class = "form-control col-md-2" })
+        @Html.ValidationMessageFor(x => x.dose)
+        <br /><br />
+        @Html.Label("Defined Daily Dose")
+        @Html.TextBoxFor(x => x.defined_daily_dose, new { @class = "form-control col-md-2" })
+        @Html.ValidationMessageFor(x => x.defined_daily_dose)
+        <br /><br />
+        @Html.Label("Producer Name")
+        @Html.TextBoxFor(x => x.Producer, new { @class = "form-control col-md-2" })
+        @Html.ValidationMessageFor(x => x.Producer)
+        <br /><br />
+        @Html.Label("Indications")
+        @Html.TextBoxFor(x => x.Indications, new { @class = "form-control col-md-2" })
+        @Html.ValidationMessageFor(x => x.Indications)
+        <br /><br />
+        <button class="btn btn-info">Add And Save</button>
+    </div>
     }
 </div>
 <br />

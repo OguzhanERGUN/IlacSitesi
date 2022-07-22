@@ -41,13 +41,13 @@ namespace IlacSitesi.Controllers
         {
             if (searching == null || searching == "")
             {
-                return View(DB.Ilacs.ToList());
+                return View(DB.MonoklonalAntikors.ToList());
             }
-            return View(DB.Ilacs.Where(x => x.IlacAdi.Contains(searching)).ToList());
+            return View(DB.MonoklonalAntikors.Where(x => x.icd10_code.Contains(searching)).ToList());
         }
         public ActionResult UserDetayGoruntule(int id)
         {
-            Ilac ılac = DB.Ilacs.Where(x => x.IlacID == id).FirstOrDefault();
+            MonoklonalAntikors ılac = DB.MonoklonalAntikors.Where(x => x.ma_id == id).FirstOrDefault();
 
             return View(ılac);
         }

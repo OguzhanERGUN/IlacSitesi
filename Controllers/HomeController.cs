@@ -19,17 +19,16 @@ namespace IlacSitesi.Controllers
         {
             if (searching == null || searching == "")
             {
-                return View(DB.Ilacs.ToList());
+                return View(DB.MonoklonalAntikors.ToList());
             }
-            return View(DB.Ilacs.Where(x => x.IlacAdi.Contains(searching)).ToList());
+            return View(DB.MonoklonalAntikors.Where(x => x.icd10_code.Contains(searching)).ToList());
         }
 
 
 
         public ActionResult IlacDetay(int id)
         {
-            Ilac ılac = DB.Ilacs.Where(x => x.IlacID == id).FirstOrDefault();
-
+            MonoklonalAntikors ılac = DB.MonoklonalAntikors.Where(x => x.ma_id == id).FirstOrDefault();
             return View(ılac);
         }
 
@@ -42,11 +41,11 @@ namespace IlacSitesi.Controllers
 
 
         [HttpPost]
-        public ActionResult IlacEkle(Ilac ılac)
+        public ActionResult IlacEkle(MonoklonalAntikors ılac)
         {
             if (ılac != null)
             {
-                DB.Ilacs.Add(ılac);
+                //DB.MonoklonalAntikors.Add(ılac);
             }
             DB.SaveChanges();
             return RedirectToAction("Index");
@@ -55,10 +54,10 @@ namespace IlacSitesi.Controllers
 
         public ActionResult IlacSil(int id)
         {
-            Ilac ılac = DB.Ilacs.Where(x => x.IlacID == id).FirstOrDefault();
+            MonoklonalAntikors ılac = DB.MonoklonalAntikors.Where(x => x.ma_id == id).FirstOrDefault();
             if (ılac != null)
             {
-                DB.Ilacs.Remove(ılac);
+                DB.MonoklonalAntikors.Remove(ılac);
             }
             DB.SaveChanges();
             return RedirectToAction("Index");
@@ -68,26 +67,26 @@ namespace IlacSitesi.Controllers
         [HttpGet]
         public ActionResult IlacDuzenle(int id)
         {
-            Ilac ılac = DB.Ilacs.Where(x => x.IlacID == id).FirstOrDefault();
+            MonoklonalAntikors ılac = DB.MonoklonalAntikors.Where(x => x.ma_id == id).FirstOrDefault();
             return View(ılac);
         }
 
 
 
         [HttpPost]
-        public ActionResult IlacDuzenle(Ilac ılac)
+        public ActionResult IlacDuzenle(MonoklonalAntikors ılac)
         {
             if (ılac != null)
             {
-                Ilac temp = DB.Ilacs.Where(x => x.IlacID == ılac.IlacID).FirstOrDefault();
+                MonoklonalAntikors temp = DB.MonoklonalAntikors.Where(x => x.ma_id == ılac.ma_id).FirstOrDefault();
                 
                 if (temp != null)
                 {
-                    temp.IlacID = ılac.IlacID;
-                    temp.IlacAdi = ılac.IlacAdi;
-                    temp.Price = ılac.Price;
-                    temp.StokAdedi = ılac.StokAdedi;
-                    temp.Description = ılac.Description;
+                    temp.icd10_code = ılac.icd10_code;
+                    temp.dose = ılac.dose;
+                    temp.defined_daily_dose = ılac.defined_daily_dose;
+                    temp.Producer = ılac.Producer;
+                    temp.Indications = ılac.Indications;
                 }
                 
             }

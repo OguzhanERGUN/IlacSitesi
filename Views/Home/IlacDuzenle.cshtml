@@ -4,7 +4,7 @@
 }
 
 @using IlacSitesi.Models
-@model Ilac
+@model MonoklonalAntikors
 
 
 
@@ -12,28 +12,44 @@
 <br />
 <br />
 <br />
-<div class="col-md-12 ">
+<div class="col-lg-12 ">
     @using (Html.BeginForm("IlacDuzenle", "Home", FormMethod.Post))
     {
 
-        @Html.Label("İlaç ID", new { @class = "form-label" })
-        @Html.TextBoxFor(x => x.IlacID, new { @class = "form-control col-md-2" })
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Example label</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Another label</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Example label</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Another label</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+        </div>
+        @Html.Label("ICD-10 Code", new { @class = "form-label" })
+        @Html.TextBoxFor(x => x.icd10_code, new { @class = "form-control col-md-2" })
         <br />
-        @Html.Label("İlaç Adı")
-        @Html.TextBoxFor(x => x.IlacAdi, new { @class = "form-control col-md-2 " })
-        @Html.ValidationMessageFor(x => x.IlacAdi)
+        @Html.Label("Dose")
+        @Html.TextBoxFor(x => x.dose, new { @class = "form-control col-md-2 " })
+        @Html.ValidationMessageFor(x => x.dose)
         <br />
-        @Html.Label("İlaç Açıklaması")
-        @Html.TextAreaFor(x => x.Description, new { @class = "form-control col-md-2 " })
-        @Html.ValidationMessageFor(x => x.Description)
+        @Html.Label("DDD")
+        @Html.TextAreaFor(x => x.defined_daily_dose, new { @class = "form-control col-md-2 " })
+        @Html.ValidationMessageFor(x => x.defined_daily_dose)
         <br />
-        @Html.Label("İlaç Fiyat")
-        @Html.TextBoxFor(x => x.Price, new { @class = "form-control col-md-2" })
-        @Html.ValidationMessageFor(x => x.Price)
+        @Html.Label("Producer Name")
+        @Html.TextBoxFor(x => x.Producer, new { @class = "form-control col-md-2" })
+        @Html.ValidationMessageFor(x => x.Producer)
         <br />
-        @Html.Label("İlaç Stok Adedi")
-        @Html.TextBoxFor(x => x.StokAdedi, new { @class = "form-control col-md-2" })
-        @Html.ValidationMessageFor(x => x.StokAdedi)
+        @Html.Label("Indications")
+        @Html.TextBoxFor(x => x.Indications, new { @class = "form-control col-md-2" })
+        @Html.ValidationMessageFor(x => x.Indications)
         <br />
         <button class="btn btn-info">Değişikleri Kaydet</button>
 

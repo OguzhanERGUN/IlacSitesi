@@ -1,53 +1,52 @@
-﻿@{
-    ViewBag.Title = "IlacDetay";
+﻿
+@{
+    ViewBag.Title = "Index";
 }
-@using IlacSitesi.Models
-@model Ilac
 
-<!DOCTYPE html>
-<html>
-<body class="hold-transition sidebar-mini">
-    <section class="content">
-        <!-- Default box -->
-        <div class="card card-solid">
-            <div class="card-body pb-0">
-                <div class="row d-flex align-items-stretch">
-                        <div class="col-12 col-sm-6 col-md-10d-flex align-items-stretch">
-                            <div class="card bg-light">
-                                <div class="card-header text-muted border-bottom-0">
-                                    İlaç: @Model.IlacAdi
-                                </div>
-                                <div class="card-body pt-0">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h3 class="lead"><b>Stok Adedi: @Model.StokAdedi </b></h3>
-                                            <p class="text-muted text-sm">Açıklama: @Model.Description  </p>
-                                            <ul class="ml-4 mb-0 fa-ul text-muted">
-                                                <li class="x"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Fiyat: @Model.Price </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-5 text-center">
-                                            <img src="#" alt="" class="img-circle img-fluid">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="text-right">
-                                        <a href="/Home/IlacSil/@Model.IlacID" class="btn btn-sm btn-danger">
-                                            <i class="fas fa-user"></i> Ilacı Sil
-                                        </a>
-                                        <a href="/Home/IlacDuzenle/@Model.IlacID" class="btn btn-sm btn-warning">
-                                            <i class="fas fa-user"></i> Ilacı Düzenle
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+@model IlacSitesi.Models.MonoklonalAntikors
+
+
+    
+        <div class="row">
+            <div class="col-lg-12 center">
+               
+
+                    <!-- Your Table Here -->
+                 
+                    <table class="table table-primary table table-hover" style="background-color: white">
+                        <thead>
+                            <tr>
+                                <th>ICD-10 Code</th>
+                                <th>Dose</th>
+                                <th>D.D.D.</th>
+                                <th>Producer</th>
+                                <th>Indications</th>
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                               
+                                    <tr>
+                                        <td>@Model.icd10_code</td>
+                                        <td>@Model.dose</td>
+                                        <td>@Model.defined_daily_dose</td>
+                                        <td>@Model.Producer.producer_name</td>
+                                        <td>@Model.Indications.indications_details</td>
+
+                                    </tr>
+                                
+                            
+                        </tbody>
+                    </table>
+                    
+                    <div class="text-right">
+                        <a href="/Home/IlacSil/@Model.ma_id" class="btn btn-sm btn-danger">
+                            <i class="fas fa-user"></i> Ilacı Sil
+                        </a>
+                        <a href="/Home/IlacDuzenle/@Model.ma_id" class="btn btn-sm btn-warning">
+                            <i class="fas fa-user"></i> Ilacı Düzenle
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <!-- /.card -->
-    </section>
-    <!-- /.content -->
-</body>
-</html>
+            </div>    

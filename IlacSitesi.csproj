@@ -171,6 +171,14 @@
     <Compile Include="Migrations\202206221531231_mig_new_models.designer.cs">
       <DependentUpon>202206221531231_mig_new_models.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202207181657040_add_all_models.cs" />
+    <Compile Include="Migrations\202207181657040_add_all_models.designer.cs">
+      <DependentUpon>202207181657040_add_all_models.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207181700085_adding-models-compltly.cs" />
+    <Compile Include="Migrations\202207181700085_adding-models-compltly.designer.cs">
+      <DependentUpon>202207181700085_adding-models-compltly.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Ilac.cs" />
     <Compile Include="Models\Indications.cs" />
@@ -230,6 +238,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206221531231_mig_new_models.resx">
       <DependentUpon>202206221531231_mig_new_models.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207181657040_add_all_models.resx">
+      <DependentUpon>202207181657040_add_all_models.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207181700085_adding-models-compltly.resx">
+      <DependentUpon>202207181700085_adding-models-compltly.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
