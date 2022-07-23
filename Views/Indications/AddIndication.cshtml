@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "AddIndication";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using IlacSitesi.Models
+@model Indications
+
+
+<div class="col-md-12 ">
+    @using (Html.BeginForm("AddIndication", "Indications", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.Label("Indication Detail", new { @style = "color: #ffc107" })
+            @Html.TextAreaFor(x => x.indications_details, new { @class = "form-control col-md-6 " })
+            @Html.ValidationMessageFor(x => x.indications_details)
+            <br />
+            <button class="btn btn-info">Add And Save</button>
+        </div>
+    }
+</div>

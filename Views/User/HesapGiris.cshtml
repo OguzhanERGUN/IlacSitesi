@@ -18,26 +18,25 @@
             </div>
         </div>
         <div class="align-self-xl-center">
-            <div class="col-lg-12">
+            <div class="col-lg-12 ">
                     <div class="row">
-                        @*Henüz HTML helper methodlarını incelemedim öğrenmeli ve buradaki form işlemini tamamlamalıyım.*@
                         @using (Html.BeginForm("HesapGiris", "User", FormMethod.Post))
                         {
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    @Html.Label("Email")
+                                    @Html.Label("E-mail",new { @style = "color: #ffc107" })
                                     @Html.TextBoxFor(x => x.UserMail, new { @class = "form-control " })
-                                    @Html.ValidationMessageFor(x => x.UserMail)
+                                    @Html.ValidationMessageFor(x => x.UserMail, "", new { @class = "text-danger" })
                                 
-                                    @Html.Label("Şifre")
-                                    @Html.TextBoxFor(x => x.UserPassword, new { @class = "form-control " })
-                                    @Html.ValidationMessageFor(x => x.UserPassword)
+                                    @Html.Label("Password", new { @style = "color: #ffc107" })
+                                    @Html.PasswordFor(x => x.UserPassword, new { @class = "form-control " })
+                                    @Html.ValidationMessageFor(x => x.UserPassword, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             
                             <div class="col-lg-12 text-left">
-                                
-                                <button class="btn btn-primary btn-xl text-uppercase">login</button>
+
+                                <button class="btn btn-primary btn-xl text-uppercase">Giriş Yap</button>
                             </div>
                             
                         }

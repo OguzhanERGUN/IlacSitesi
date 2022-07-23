@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Concreate\Context.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndicationsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -178,6 +179,18 @@
     <Compile Include="Migrations\202207181700085_adding-models-compltly.cs" />
     <Compile Include="Migrations\202207181700085_adding-models-compltly.designer.cs">
       <DependentUpon>202207181700085_adding-models-compltly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207231210556_add_enum_prop_user.cs" />
+    <Compile Include="Migrations\202207231210556_add_enum_prop_user.designer.cs">
+      <DependentUpon>202207231210556_add_enum_prop_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207231215240_fixed_enum_prop.cs" />
+    <Compile Include="Migrations\202207231215240_fixed_enum_prop.designer.cs">
+      <DependentUpon>202207231215240_fixed_enum_prop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207231222016_fixed_enum_prop_V1.cs" />
+    <Compile Include="Migrations\202207231222016_fixed_enum_prop_V1.designer.cs">
+      <DependentUpon>202207231222016_fixed_enum_prop_V1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Ilac.cs" />
@@ -222,6 +235,14 @@
     <Content Include="Views\Home\IlacEkle.cshtml" />
     <Content Include="Views\User\UserDetayGoruntule.cshtml" />
     <Content Include="Views\User\HesapGiris.cshtml" />
+    <Content Include="Views\User\CreateAccount.cshtml" />
+    <Content Include="Views\Indications\Index.cshtml" />
+    <Content Include="Views\User\SuccessPage.cshtml" />
+    <Content Include="Views\User\FailedPage.cshtml" />
+    <Content Include="Views\Indications\AddIndication.cshtml" />
+    <Content Include="Views\Indications\SuccessPage.cshtml" />
+    <Content Include="Views\Indications\FailedPage.cshtml" />
+    <Content Include="Views\User\Buy.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -244,6 +265,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202207181700085_adding-models-compltly.resx">
       <DependentUpon>202207181700085_adding-models-compltly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207231210556_add_enum_prop_user.resx">
+      <DependentUpon>202207231210556_add_enum_prop_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207231215240_fixed_enum_prop.resx">
+      <DependentUpon>202207231215240_fixed_enum_prop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207231222016_fixed_enum_prop_V1.resx">
+      <DependentUpon>202207231222016_fixed_enum_prop_V1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -14,24 +14,24 @@
     @using (Html.BeginForm("IlacEkle", "Home", FormMethod.Post))
     {
     <div class="form-group">
-        @Html.Label("ICD-10 Code")
-        @Html.TextBoxFor(x => x.icd10_code, new { @class = "form-control col-md-2" })
+        @Html.Label("ICD-10 Code", new { @style = "color: #ffc107" })
+        @Html.TextBoxFor(x => x.icd10_code, new { @class = "form-control col-md-4" })
         @Html.ValidationMessageFor(x => x.icd10_code)
         <br /><br />
-        @Html.Label("Dose")
-        @Html.TextBoxFor(x => x.dose, new { @class = "form-control col-md-2" })
+        @Html.Label("Dose", new { @style = "color: #ffc107" })
+        @Html.TextBoxFor(x => x.dose, new { @class = "form-control col-md-4" })
         @Html.ValidationMessageFor(x => x.dose)
         <br /><br />
-        @Html.Label("Defined Daily Dose")
-        @Html.TextBoxFor(x => x.defined_daily_dose, new { @class = "form-control col-md-2" })
+        @Html.Label("Defined Daily Dose", new { @style = "color: #ffc107" })
+        @Html.TextBoxFor(x => x.defined_daily_dose, new { @class = "form-control col-md-4" })
         @Html.ValidationMessageFor(x => x.defined_daily_dose)
         <br /><br />
-        @Html.Label("Producer Name")
-        @Html.TextBoxFor(x => x.Producer, new { @class = "form-control col-md-2" })
+        @Html.Label("Producer Name", new { @style = "color: #ffc107" })
+        @Html.TextBoxFor(x => x.Producer, new { @class = "form-control col-md-4" })
         @Html.ValidationMessageFor(x => x.Producer)
         <br /><br />
-        @Html.Label("Indications")
-        @Html.TextBoxFor(x => x.Indications, new { @class = "form-control col-md-2" })
+        @Html.Label("Indication", new { @style = "color: #ffc107" })
+        @Html.TextAreaFor(x => x.Indications, new { @class = "form-control col-md-4" })
         @Html.ValidationMessageFor(x => x.Indications)
         <br /><br />
         <button class="btn btn-info">Add And Save</button>

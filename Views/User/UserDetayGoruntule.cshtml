@@ -3,49 +3,54 @@
     ViewBag.Title = "UserDetayGoruntule";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
- 
-@using IlacSitesi.Models
-@model Ilac
 
-<!DOCTYPE html>
-<html>
-<body class="hold-transition sidebar-mini">
-    <section class="content">
-        <!-- Default box -->
-        <div class="card card-solid">
-            <div class="card-body pb-0">
-                <div class="row d-flex align-items-stretch">
-                    <div class="col-12 col-sm-6 col-md-10d-flex align-items-stretch">
-                        <div class="card bg-light">
-                            <div class="card-header text-muted border-bottom-0">
-                                <h3 class="lead"><b>İlaç: @Model.IlacAdi</b></h3>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h3 class="lead"><b>Stok Adedi: @Model.StokAdedi </b></h3>
-                                        <p class="text-muted text-sm">Açıklama: @Model.Description  </p>
-                                        <ul class="ml-4 mb-0 fa-ul text-muted">
-                                            <li class="x"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span>Fiyat: @Model.Price </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-5 text-center">
-                                        <img src="#" alt="" class="img-circle img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                            @*<div class="card-footer">
-                                <div class="text-right">
-                                </div>
-                            </div>*@
-                        </div>
-                    </div>
-                </div>
+@using IlacSitesi.Models
+@model MonoklonalAntikors
+
+
+
+<div class="row">
+    <div class="col-lg-12 center">
+
+
+        <!-- Your Table Here -->
+
+        <table class="table table-bordered table table-hover" style="background-color: white">
+            <thead>
+                <tr>
+                    <th>ICD-10 Code</th>
+                    <th>Dose</th>
+                    <th>D.D.D.</th>
+                    <th>Producer</th>
+                    <th>Indications</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>@Model.icd10_code</td>
+                    <td>@Model.dose</td>
+                    <td>@Model.defined_daily_dose</td>
+                    <td>@Model.Producer.producer_name</td>
+                    <td>@Model.Indications.indications_details</td>
+
+                </tr>
+
+
+            </tbody>
+        </table>
+
+        
+            <div class="col-lg-2 text-center">
+                <a href="/User/Buy" class="btn btn-block btn-primary">
+                    <i class="fas fa-user " style="color:black">Satın Al</i>
+                </a>
+                <div id="success"></div>
             </div>
+
         </div>
-        <!-- /.card -->
-    </section>
-    <!-- /.content -->
-</body>
-</html>
+    </div>
+
+
 

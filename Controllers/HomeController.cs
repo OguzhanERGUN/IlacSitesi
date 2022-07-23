@@ -45,7 +45,7 @@ namespace IlacSitesi.Controllers
         {
             if (ılac != null)
             {
-                //DB.MonoklonalAntikors.Add(ılac);
+                DB.MonoklonalAntikors.Add(ılac);
             }
             DB.SaveChanges();
             return RedirectToAction("Index");
@@ -74,19 +74,19 @@ namespace IlacSitesi.Controllers
 
 
         [HttpPost]
-        public ActionResult IlacDuzenle(MonoklonalAntikors ılac)
+        public ActionResult IlacDuzenle(MonoklonalAntikors ılac,int id)
         {
             if (ılac != null)
             {
-                MonoklonalAntikors temp = DB.MonoklonalAntikors.Where(x => x.ma_id == ılac.ma_id).FirstOrDefault();
+                MonoklonalAntikors temp = DB.MonoklonalAntikors.Where(x => x.ma_id == id).FirstOrDefault();
                 
                 if (temp != null)
                 {
                     temp.icd10_code = ılac.icd10_code;
                     temp.dose = ılac.dose;
                     temp.defined_daily_dose = ılac.defined_daily_dose;
-                    temp.Producer = ılac.Producer;
-                    temp.Indications = ılac.Indications;
+                    temp.Producer.producer_name = ılac.Producer.producer_name;
+                    temp.Indications.indications_details = ılac.Indications.indications_details;
                 }
                 
             }

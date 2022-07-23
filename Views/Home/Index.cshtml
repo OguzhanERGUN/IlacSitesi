@@ -20,11 +20,11 @@
                         <div class="form-group">-->
                             @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "btn-btn primary" }))
                             {
-                                @Html.TextBox("searching")<button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase " type="submit">SEARCH</button>
-                                <div style="height: 300px; overflow: auto;">
+                                @Html.TextBox("searching")<button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase " type="submit" style="color: black">SEARCH</button>
+                                <div style="height: 350px; overflow: auto;">
                                     <!-- Your Table Here -->
 
-                                    <table class="table table-primary table table-hover" style="background-color: white">
+                                    <table class="table table-bordered table table-hover" style="background-color: white">
                                         <thead>
                                             <tr>
                                                 <th>ICD-10 Code</th>
@@ -69,10 +69,10 @@
                             }
                         @*</div>
                     </div>*@
-                    <div class="clearfix"></div>
+<br />
                     <div class="col-lg-2 text-center">
-                        <a href="/Home/IlacEkle" class="btn btn-sm btn-primary">
-                            <i class="fas fa-user"></i> İlaç Ekle
+                        <a href="/Home/IlacEkle" class="btn btn-block btn-primary">
+                            <i class="fas fa-user " style="color:black">İlaç Ekle</i> 
                         </a>
                         <div id="success"></div>
                     </div>

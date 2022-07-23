@@ -13,45 +13,28 @@
 <br />
 <br />
 <div class="col-lg-12 ">
-    @using (Html.BeginForm("IlacDuzenle", "Home", FormMethod.Post))
+    @using (Html.BeginForm("IlacDuzenle", "Home", new { id = Model.ma_id }, FormMethod.Post))
     {
-
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Example label</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Another label</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Example label</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Another label</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-        </div>
-        @Html.Label("ICD-10 Code", new { @class = "form-label" })
-        @Html.TextBoxFor(x => x.icd10_code, new { @class = "form-control col-md-2" })
+        @Html.Label("ICD-10 Code", new { @class = "form-label" , @style = "color: #ffc107" })
+        @Html.TextBoxFor(x => x.icd10_code, new { @class = "form-control col-md-4" })
         <br />
-        @Html.Label("Dose")
-        @Html.TextBoxFor(x => x.dose, new { @class = "form-control col-md-2 " })
+        @Html.Label("DDose", new { @class = "form-label", @style = "color: #ffc107" })
+        @Html.TextBoxFor(x => x.dose, new { @class = "form-control col-md-4 " })
         @Html.ValidationMessageFor(x => x.dose)
         <br />
-        @Html.Label("DDD")
-        @Html.TextAreaFor(x => x.defined_daily_dose, new { @class = "form-control col-md-2 " })
+        @Html.Label("DDD", new { @class = "form-label", @style = "color: #ffc107" })
+        @Html.TextBoxFor(x => x.defined_daily_dose, new { @class = "form-control col-md-4" })
         @Html.ValidationMessageFor(x => x.defined_daily_dose)
         <br />
-        @Html.Label("Producer Name")
-        @Html.TextBoxFor(x => x.Producer, new { @class = "form-control col-md-2" })
-        @Html.ValidationMessageFor(x => x.Producer)
+        @Html.Label("Producer Name", new { @class = "form-label", @style = "color: #ffc107" })
+        @Html.TextBoxFor(x => x.Producer.producer_name, new { @class = "form-control col-md-4" })
+        @Html.ValidationMessageFor(x => x.Producer.producer_name)
         <br />
-        @Html.Label("Indications")
-        @Html.TextBoxFor(x => x.Indications, new { @class = "form-control col-md-2" })
-        @Html.ValidationMessageFor(x => x.Indications)
+        @Html.Label("Indications", new { @class = "form-label", @style = "color: #ffc107" })
+        @Html.TextBoxFor(x => x.Indications.indications_details, new { @class = "form-control col-md-4" })
+        @Html.ValidationMessageFor(x => x.Indications.indications_details)
         <br />
-        <button class="btn btn-info">Değişikleri Kaydet</button>
+        <button class="btn btn-info">Save Changes</button>
 
     }
 </div>

@@ -6,27 +6,13 @@
 
 @model List<IlacSitesi.Models.MonoklonalAntikors>
 
-
-@*<!--<section id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 text-center">
-                <h3 class="section-heading text-uppercase">Enter ICD-10 Code</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-10">-->
-                @*<form id="contactForm" name="sentMessage" novalidate="novalidate">*@
-<!--<div class="row">
-    <div class="col-md-12">
-        <div class="form-group">-->
 @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "btn-btn primary" }))
 {
-    @Html.TextBox("searching")<button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase " type="submit">SEARCH</button>
-    <div style="height: 300px; overflow: auto;">
+    @Html.TextBox("searching")<button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase " type="submit" style="color: black">SEARCH</button>
+    <div style="height: 350px; overflow: auto;">
         <!-- Your Table Here -->
 
-        <table class="table table-primary table table-hover" style="background-color: white">
+        <table class="table table-bordered table table-hover" style="background-color: white">
             <thead>
                 <tr>
                     <th>ICD-10 Code</th>
@@ -59,7 +45,7 @@
                             <td>@item.defined_daily_dose</td>
                             <td>@item.Producer.producer_name</td>
                             <td>@item.Indications.indications_details</td>
-                            <td>@Html.ActionLink("Details", "IlacDetay", new { id = item.ma_id }, new { @class = "btn btn-warning btn-xs text-uppercase" })</td>
+                            <td>@Html.ActionLink("Details", "UserDetayGoruntule", new { id = item.ma_id }, new { @class = "btn btn-warning btn-xs text-uppercase" })</td>
 
                         </tr>
                     }
@@ -69,4 +55,5 @@
     </div>
 
 }
+
 

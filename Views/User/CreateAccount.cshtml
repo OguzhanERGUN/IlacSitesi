@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "CreateAccount";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using IlacSitesi.Models
+@model User
+
+
+<div class="col-auto">
+    @using (Html.BeginForm("CreateAccount", "User", FormMethod.Post))
+    {
+        <div class="form-group col-form-label">
+            @Html.Label("Name", new { @style = "color: #20c997" })
+            @Html.TextBoxFor(x => x.UserName, new { @class = "form-control col-md-4" })
+            @Html.ValidationMessageFor(x => x.UserName)
+            <br /><br />
+            @Html.Label("Surname", new { @style = "color: #20c997" })
+            @Html.TextBoxFor(x => x.UserSurname, new { @class = "form-control col-md-4" })
+            @Html.ValidationMessageFor(x => x.UserSurname)
+            <br /><br />
+            @Html.Label("E-Mail Adress", new { @style = "color: #20c997" })
+            @Html.TextBoxFor(x => x.UserMail, new { @class = "form-control col-md-4" })
+            @Html.ValidationMessageFor(x => x.UserMail)
+            <br /><br />
+            @Html.Label("Password", new { @style = "color: #20c997" })
+            @Html.PasswordFor(x => x.UserPassword, new { @class = "form-control col-md-4" })
+            @Html.ValidationMessageFor(x => x.UserPassword)
+            <br /><br />
+            @Html.Label("Phone Number", new { @style = "color: #20c997" })
+            @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control col-md-4" })
+            @Html.ValidationMessageFor(x => x.PhoneNumber)
+            <br /><br />
+            @Html.Label("Your Occupation", new { @style = "color: #20c997" })
+            @Html.TextBoxFor(x => x.Occupation, new { @class = "form-control col-md-4" })
+            @Html.ValidationMessageFor(x => x.Occupation)
+            <br /><br />
+            @Html.Label("Select Institution", new { @style = "color: #20c997" })
+            @Html.DropDownListFor(m => m.Institution_type, new SelectList(Enum.GetValues(typeof(Jobs))), "Select Institution", new { @class = "form-control col-md-4" })
+            <br />
+            <button class="btn btn-info">Add And Save</button>
+
+        </div>
+    }
+</div>
